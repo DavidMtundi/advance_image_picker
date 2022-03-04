@@ -38,6 +38,21 @@ class ImageObject {
 
   /// OCR original text
   String? ocrOriginalText;
+
+  ///this converts the image object to a map
+  Map<String, dynamic> toMap() {
+    return {
+      "originalPath": originalPath,
+      "modifiedPath": modifiedPath,
+      "assetId": assetId,
+      "modifiedWidth": modifiedWidth,
+      "modifiedHeight": modifiedHeight,
+      "recognitions": recognitions,
+      "label": label,
+      "ocrText": ocrText,
+      "ocrOriginalText": ocrOriginalText,
+    };
+  }
 }
 
 /// Detected object
@@ -68,4 +83,15 @@ class DetectObject {
       this.y = 0,
       this.w = 0,
       this.h = 0});
+
+  ///this converts it to a map
+  Map<String, dynamic> toMap() {
+    return {
+      'label': label,
+      'x': x,
+      'y': y,
+      'w': w,
+      'h': h,
+    };
+  }
 }
